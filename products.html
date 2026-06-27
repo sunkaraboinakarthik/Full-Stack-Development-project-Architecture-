@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products - Karthik Store</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+🛒 Karthik Store
+
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li>
+
+<a href="cart.html">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Cart
+
+<span id="cart-count">0</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="contact.html">
+
+Contact
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+<button id="themeBtn">
+
+🌙
+
+</button>
+
+</header>
+
+<section class="products-page">
+
+<h1>Our Products</h1>
+
+<input
+
+type="text"
+
+id="search"
+
+placeholder="Search Products...">
+
+<div class="products" id="products">
+
+<div class="product-card">
+
+<img src="https://via.placeholder.com/250" alt="Laptop">
+
+<h3>Laptop</h3>
+
+<p>₹55,000</p>
+
+<button onclick="addToCart('Laptop',55000)">
+Add to Cart
+</button>
+
+</div>
+
+<div class="product-card">
+
+<img src="https://via.placeholder.com/250" alt="Mobile">
+
+<h3>Smart Phone</h3>
+
+<p>₹20,000</p>
+
+<button onclick="addToCart('Smart Phone',20000)">
+Add to Cart
+</button>
+
+</div>
+
+<div class="product-card">
+
+<img src="https://via.placeholder.com/250" alt="Headphones">
+
+<h3>Headphones</h3>
+
+<p>₹2,500</p>
+
+<button onclick="addToCart('Headphones',2500)">
+Add to Cart
+</button>
+
+</div>
+
+<div class="product-card">
+
+<img src="https://via.placeholder.com/250" alt="Watch">
+
+<h3>Smart Watch</h3>
+
+<p>₹5,000</p>
+
+<button onclick="addToCart('Smart Watch',5000)">
+Add to Cart
+</button>
+
+</div>
+
+<div class="product-card">
+
+<img src="https://via.placeholder.com/250" alt="Keyboard">
+
+<h3>Keyboard</h3>
+
+<p>₹1,200</p>
+
+<button onclick="addToCart('Keyboard',1200)">
+Add to Cart
+</button>
+
+</div>
+
+<div class="product-card">
+
+<img src="https://via.placeholder.com/250" alt="Mouse">
+
+<h3>Wireless Mouse</h3>
+
+<p>₹800</p>
+
+<button onclick="addToCart('Wireless Mouse',800)">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Karthik Store
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

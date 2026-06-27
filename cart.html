@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shopping Cart</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+🛒 Karthik Store
+
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li><a href="cart.html">Cart</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<button id="themeBtn">
+
+🌙
+
+</button>
+
+</header>
+
+<section class="cart-page">
+
+<h1>Shopping Cart</h1>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Product</th>
+
+<th>Price</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="cartItems">
+
+</tbody>
+
+</table>
+
+<h2>
+
+Total : ₹<span id="total">0</span>
+
+</h2>
+
+<button id="checkoutBtn">
+
+Proceed to Checkout
+
+</button>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Karthik Store
+
+</p>
+
+</footer>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const cartItems = document.getElementById("cartItems");
+
+const total = document.getElementById("total");
+
+function displayCart(){
+
+cartItems.innerHTML="";
+
+let sum=0;
+
+cart.forEach((item,index)=>{
+
+sum += item.price;
+
+cartItems.innerHTML +=
+
+`
+
+<tr>
+
+<td>${item.name}</td>
+
+<td>₹${item.price}</td>
+
+<td>
+
+<button onclick="removeItem(${index})">
+
+Remove
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+total.innerHTML=sum;
+
+}
+
+function removeItem(index){
+
+cart.splice(index,1);
+
+localStorage.setItem(
+
+"cart",
+
+JSON.stringify(cart)
+
+);
+
+displayCart();
+
+}
+
+document.getElementById("checkoutBtn")
+
+.addEventListener("click",()=>{
+
+if(cart.length==0){
+
+alert("Cart is Empty");
+
+}
+
+else{
+
+alert("Order Placed Successfully!");
+
+localStorage.removeItem("cart");
+
+location.reload();
+
+}
+
+});
+
+displayCart();
+
+</script>
+
+</body>
+
+</html>
